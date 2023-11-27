@@ -3,7 +3,7 @@ var json_Gempa_2 = {"type":"FeatureCollection","name":"Gempa_2","crs":{"type":"n
 		"ID":"hgd66",
 		"MagDepth":"M8.7 - 20 km",
 		"Waktu":"Tahun 1390",
-		"Link":"<a href=\"event.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		"Link":"<a href=\"hgd66.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
 		[[99.7,-2.12]]}},
 
 
