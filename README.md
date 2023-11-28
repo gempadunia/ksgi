@@ -3,3 +3,4 @@ Katalog ShakeMap Gempa Indonesia merupakan ruang satu pintu yang menyatukan selu
 
 Jika ada kesalahan atau perbaikan yang teman-teman ingin sampaikan, silahkan hubungi kami via email di gempaduniaid@gmail.com
 #Bagaimana Cara Kami Membuat ShakeMap?
+ksdsdsdsd
