@@ -26,7 +26,12 @@ var json_Gempa_2 = {"type":"FeatureCollection","name":"Gempa_2","crs":{"type":"n
 		"Waktu":"1898-01-06 11:15:00 WIB",
 		"Link":"<a href=\"hgd84.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
 		[[128.18,-3.66]]}},
-
+{"type":"Feature","properties":{
+		"ID":"hgd83",
+		"MagDepth":"M7.3 - 35 km",
+		"Waktu":"1909-06-04 01:40:55 WIB",
+		"Link":"<a href=\"hgd83.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[101.39,-1.99]]}},
 
 
 
