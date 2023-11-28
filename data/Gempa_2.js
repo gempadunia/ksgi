@@ -44,6 +44,12 @@ var json_Gempa_2 = {"type":"FeatureCollection","name":"Gempa_2","crs":{"type":"n
 		"Waktu":"Tahun 1660",
 		"Link":"<a href=\"hgd74.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
 		[[93.65,5.54]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd80",
+		"MagDepth":"M5.9 - 10 km",
+		"Waktu":"1916-09-09 19:34:00 WIB",
+		"Link":"<a href=\"hgd80.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[109.12,-7.61]]}},
 
 
 
