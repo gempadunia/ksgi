@@ -110,7 +110,60 @@ var json_Gempa_2 = {"type":"FeatureCollection","name":"Gempa_2","crs":{"type":"n
 		"Waktu":"1847-11-16 10:18:00 WIB",
 		"Link":"<a href=\"hgd55.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
 		[[108.33,-6.38]]}},
-
+{"type":"Feature","properties":{
+		"ID":"hgd54",
+		"MagDepth":"M7.0 - 10 km",
+		"Waktu":"1834-10-10 05:30:00 WIB",
+		"Link":"<a href=\"hgd54.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[106.99,-6.43]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd53",
+		"MagDepth":"M7.5 - 10 km",
+		"Waktu":"1892-05-17 05:30:00 WIB",
+		"Link":"<a href=\"hgd53.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[99.99,0.35]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd52",
+		"MagDepth":"M6.3 - 10 km",
+		"Waktu":"1907-07-30 02:45:00 WIB",
+		"Link":"<a href=\"hgd52.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[119.97,-1.4]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd42",
+		"MagDepth":"M7.5 - 15 km",
+		"Waktu":"1836-11-28 09:30:00 WIB",
+		"Link":"<a href=\"hgd42.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[118.76,-8.13]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd44",
+		"MagDepth":"M7.0 - 10 km",
+		"Waktu":"1815-11-22 22:00:00 WIB",
+		"Link":"<a href=\"hgd44.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[115.14,-8.02]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd45",
+		"MagDepth":"M7.6 - 35 km",
+		"Waktu":"1914-06-26 02:07:00 WIB",
+		"Link":"<a href=\"hgd45.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[101.64,-4.01]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd50",
+		"MagDepth":"M6.8 - 10 km",
+		"Waktu":"1890-12-12 15:12:00 WIB",
+		"Link":"<a href=\"hgd50.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[111.13,-6.53]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd49m",
+		"MagDepth":"M7.5 - 20 km",
+		"Waktu":"2018-09-28 17:02:45 WIB",
+		"Link":"<a href=\"hgd49m.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[119.85,-0.26]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd48",
+		"MagDepth":"M8.2 - 15 km",
+		"Waktu":"1914-05-26 21:40:06 WIB",
+		"Link":"<a href=\"hgd48.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[132.96,-0.13]]}},
 
 
 
