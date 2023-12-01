@@ -315,7 +315,150 @@ var json_Gempa_2 = {"type":"FeatureCollection","name":"Gempa_2","crs":{"type":"n
 		"Link":"<a href=\"hgd8.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
 		[[110.51,-8.47]]}},
 
-
+{"type":"Feature","properties":{
+		"ID":"hgd38",
+		"MagDepth":"M6.9 - 55 km",
+		"Waktu":"1937-09-27 16:25:18 WIB",
+		"Link":"<a href=\"hgd38.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[110.42,-8.78]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd43",
+		"MagDepth":"M7.0 - 15 km",
+		"Waktu":"1857-05-13",
+		"Link":"<a href=\"hgd43.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[115.55,-8.09]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd51",
+		"MagDepth":"M6.6 - 150 km",
+		"Waktu":"1888-10-08 19:18:00 WIB",
+		"Link":"<a href=\"hgd51.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[110.31,-7.35]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd58",
+		"MagDepth":"M7.7 - 35 km",
+		"Waktu":"1938-05-20 00:38:47 WIB",
+		"Link":"<a href=\"hgd58.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[120.29,-0.67]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd60",
+		"MagDepth":"M7.0 - 10 km",
+		"Waktu":"1893-06-12 14:50:00 WIB",
+		"Link":"<a href=\"hgd60.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[102.97,-4.03]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd61",
+		"MagDepth":"M7.9 - 40 km",
+		"Waktu":"1843-01-05 23:30:00 WIB",
+		"Link":"<a href=\"hgd61.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[97.96,1.36]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd62",
+		"MagDepth":"M6.6 - 45 km",
+		"Waktu":"1950-06-19 20:07:06 WIB",
+		"Link":"<a href=\"hgd62.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[112.02,-6.83]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd63",
+		"MagDepth":"M7.7 - 30 km",
+		"Waktu":"1770",
+		"Link":"<a href=\"hgd63.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[102.03,-4.68]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd65",
+		"MagDepth":"M8.4 - 25 km",
+		"Waktu":"Tahun 1350",
+		"Link":"<a href=\"hgd65.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[101.21,-4.17]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd67",
+		"MagDepth":"M8.3 - 25 km",
+		"Waktu":"Tahun 1394",
+		"Link":"<a href=\"hgd67.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[94.97,3.72]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd69",
+		"MagDepth":"M7.8 - 25 km",
+		"Waktu":"Tahun 1580",
+		"Link":"<a href=\"hgd69.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[96.50,2.35]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd70",
+		"MagDepth":"M8.3 - 20 km",
+		"Waktu":"Tahun 1597",
+		"Link":"<a href=\"hgd70.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[99.19,-1.47]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd71",
+		"MagDepth":"M8.3 - 18 km",
+		"Waktu":"Tahun 1613",
+		"Link":"<a href=\"hgd71.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[100.25,-2.92]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd72",
+		"MagDepth":"M8.2 - 25 km",
+		"Waktu":"Tahun 1631",
+		"Link":"<a href=\"hgd72.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[101.15,-3.91]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd73",
+		"MagDepth":"M8.3 - 20 km",
+		"Waktu":"Tahun 1658",
+		"Link":"<a href=\"hgd73.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[98.91,-1.13]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd79",
+		"MagDepth":"M7.1 - 20 km",
+		"Waktu":"1936-09-19 08:31:47 WIB",
+		"Link":"<a href=\"hgd79.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[97.58,3.68]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd82",
+		"MagDepth":"M6.5 - 150 km",
+		"Waktu":"1908-02-12 15:00:00 WIB",
+		"Link":"<a href=\"hgd82.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[110.17,-7.45]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd87",
+		"MagDepth":"M6.3 - 80 km",
+		"Waktu":"1910-06-06 04:45:00 WIB",
+		"Link":"<a href=\"hgd87.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[111.56,-8.39]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd88",
+		"MagDepth":"M7.9 - 15 km",
+		"Waktu":"1913-03-14 16:02:25 WIB",
+		"Link":"<a href=\"hgd88.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[125.89,5.54]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd89",
+		"MagDepth":"M7.5 - 20 km",
+		"Waktu":"1818-03-18 03:45:00 WIB",
+		"Link":"<a href=\"hgd89.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[101.6,-4.9]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd90",
+		"MagDepth":"M7.3 - 35 km",
+		"Waktu":"1837-09-23 00:00:00 WIB",
+		"Link":"<a href=\"hgd90.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[94.5,5]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd91",
+		"MagDepth":"M7.9 - 30 km",
+		"Waktu":"1756-11-03 00:00:00 WIB",
+		"Link":"<a href=\"hgd91.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[101.4,-4.5]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd92",
+		"MagDepth":"M7.6 - 30 km",
+		"Waktu":"1871-11-03 20:16:00 WIB",
+		"Link":"<a href=\"hgd92.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[102.4,-5.3]]}},
+{"type":"Feature","properties":{
+		"ID":"hgd93",
+		"MagDepth":"M5.4 - 10 km",
+		"Waktu":"1865-07-17 02:27:00 WIB",
+		"Link":"<a href=\"hgd93.html\">Info Lengkap</a>"},"geometry":{"type":"MultiPoint","coordinates":
+		[[110.40,-7.25]]}},
 
 	
 
