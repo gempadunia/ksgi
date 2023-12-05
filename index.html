@@ -37,12 +37,12 @@
         <script src="data/Gempa_2.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:12, minZoom:1
+            zoomControl:true, maxZoom:11, minZoom:1
         })
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('gempa.dunia');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
-        L.control.locate({locateOptions: {maxZoom: 12}}).addTo(map);
+        L.control.locate({locateOptions: {maxZoom: 11}}).addTo(map);
         var measureControl = new L.Control.Measure({
             position: 'topleft',
             primaryLengthUnit: 'meters',
@@ -68,9 +68,9 @@
             opacity: 1.0,
             attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
             minZoom: 1,
-            maxZoom: 12,
+            maxZoom: 11,
             minNativeZoom: 0,
-            maxNativeZoom: 12
+            maxNativeZoom: 11
         });
         layer_PetaDasar_0;
         map.addLayer(layer_PetaDasar_0);
