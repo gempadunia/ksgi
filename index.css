@@ -1,0 +1,411 @@
+.frame-child {
+  height: 133px;
+  width: 979px;
+  position: relative;
+  background-color: var(--color-darkslateblue);
+  display: none;
+  max-width: 100%;
+  z-index: 0;
+}
+.frame-4-2,
+.image-4-icon {
+  object-fit: cover;
+  z-index: 1;
+}
+.image-4-icon {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  margin: 0 !important;
+  right: 30px;
+  bottom: 41px;
+}
+.frame-4-2 {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.frame-4-2-wrapper {
+  height: 95px;
+  width: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-7xs) 10px 0;
+  box-sizing: border-box;
+}
+.gempa-indonesia,
+.katalog-shakemap {
+  margin: 0;
+}
+.katalog-shakemap-gempa-container {
+  margin: 0;
+  height: 72px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  z-index: 1;
+}
+.katalog-shakemap-gempa-indones-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 3px;
+  box-sizing: border-box;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.frame-item {
+  height: 105px;
+  width: 2px;
+  position: relative;
+  border-right: 2px solid var(--color-white);
+  box-sizing: border-box;
+  z-index: 1;
+}
+.frame-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 29px;
+  max-width: 100%;
+}
+.image-5-icon {
+  height: 45.1px;
+  width: 50px;
+  position: absolute;
+  margin: 0 !important;
+  top: 26px;
+  right: 0;
+  object-fit: cover;
+  z-index: 1;
+}
+.frame-group,
+.rectangle-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  max-width: 100%;
+}
+.frame-group {
+  width: 551px;
+}
+.rectangle-parent {
+  align-self: stretch;
+  background-color: var(--color-darkslateblue);
+  padding: var(--padding-mid) var(--padding-14xl) 13px;
+  box-sizing: border-box;
+  text-align: justify;
+  font-size: var(--font-size-11xl);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+.katalog-shakemap-gempa {
+  margin: 0;
+  align-self: stretch;
+  height: 43px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.ksgimap-icon {
+  width: 860px;
+  position: relative;
+  max-height: 100%;
+  object-fit: cover;
+  max-width: 100%;
+}
+.katalog-shakemap-gempa-indones-parent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  max-width: 100%;
+  text-align: center;
+  font-size: var(--font-size-11xl);
+  color: #262626;
+  font-family: var(--font-ubuntu);
+}
+.latar-belakang {
+  margin: 0;
+  height: 56px;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  max-width: 100%;
+}
+.latar-belakang-apa-itu-katal-wrapper {
+  width: 669px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 0 var(--padding-7xs);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.katalog-shakemap-gempa1 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-mid);
+  text-align: justify;
+}
+.frame-div,
+.frame-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.frame-div {
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-smi);
+}
+.frame-wrapper {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 27px 0 21px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-ubuntu);
+}
+.metodologi-dan-sumber {
+  margin: 0;
+  height: 28px;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  max-width: 100%;
+}
+.metodologi-dan-sumber-data-wrapper {
+  width: 671px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 0 8px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.sumber-data-katalog {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-mid);
+  text-align: justify;
+}
+.frame-parent1,
+.frame-section {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.frame-parent1 {
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-smi);
+}
+.frame-section {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 31px 0 var(--padding-mid);
+  box-sizing: border-box;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-ubuntu);
+}
+.martin-icon {
+  height: 396px;
+  width: 265px;
+  position: relative;
+  object-fit: cover;
+  min-height: 396px;
+}
+.kgbmkg-icon,
+.ktbmkg-icon {
+  align-self: stretch;
+  height: 200px;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+  z-index: 1;
+}
+.ktbmkg-icon {
+  height: 193px;
+  z-index: 2;
+}
+.kgbmkg-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 207px;
+}
+.ktbg-icon {
+  height: 393px;
+  width: 273px;
+  position: relative;
+  object-fit: cover;
+  min-height: 393px;
+}
+.frame-wrapper1,
+.martin-parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.martin-parent {
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 2px;
+}
+.frame-wrapper1 {
+  align-self: stretch;
+  align-items: flex-start;
+  padding: 0 30px 0 var(--padding-mid);
+  box-sizing: border-box;
+}
+.atribut-data {
+  margin: 0;
+  width: 538px;
+  position: relative;
+  font-size: inherit;
+  font-weight: 700;
+  font-family: inherit;
+  display: inline-block;
+  max-width: 100%;
+}
+.atribut-pangkalan-data {
+  align-self: stretch;
+  height: 108px;
+  position: relative;
+  font-size: var(--font-size-mid);
+  text-align: justify;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.atribut-data-parent,
+.frame-main,
+.frame-wrapper2 {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.atribut-data-parent {
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-smi);
+}
+.frame-main,
+.frame-wrapper2 {
+  box-sizing: border-box;
+}
+.frame-wrapper2 {
+  align-self: stretch;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0 34px 0 var(--padding-mid);
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-black);
+  font-family: var(--font-ubuntu);
+}
+.frame-main {
+  width: 947px;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--padding-xl);
+  gap: 34px;
+}
+.frame-inner {
+  height: 75px;
+  width: 979px;
+  position: relative;
+  background-color: var(--color-darkslateblue);
+  display: none;
+  max-width: 100%;
+}
+.gempadunia-2023 {
+  position: relative;
+  z-index: 1;
+}
+.rectangle-group {
+  align-self: stretch;
+  background-color: var(--color-darkslateblue);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px var(--padding-14xl) var(--padding-14xl) var(--padding-xl);
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: justify;
+  font-size: 15px;
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+.frame-parent {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 750px) {
+  .katalog-shakemap-gempa {
+    font-size: var(--font-size-5xl);
+  }
+}
+@media screen and (max-width: 675px) {
+  .frame-main {
+    gap: 17px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .katalog-shakemap-gempa {
+    font-size: 18px;
+  }
+  .atribut-data,
+  .latar-belakang,
+  .metodologi-dan-sumber {
+    font-size: var(--font-size-lgi);
+  }
+}
