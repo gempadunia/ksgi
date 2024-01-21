@@ -389,23 +389,3 @@
   gap: 22px;
   letter-spacing: normal;
 }
-@media screen and (width: 750px) {
-  .katalog-shakemap-gempa {
-    font-size: var(--font-size-5xl);
-  }
-}
-@media screen and (width: 675px) {
-  .frame-main {
-    gap: 17px;
-  }
-}
-@media screen and (width: 450px) {
-  .katalog-shakemap-gempa {
-    font-size: 18px;
-  }
-  .atribut-data,
-  .latar-belakang,
-  .metodologi-dan-sumber {
-    font-size: var(--font-size-lgi);
-  }
-}
