@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-inter: Inter;
+  --font-ubuntu: Ubuntu;
+
+  /* font sizes */
+  --font-size-mid: 17px;
+  --font-size-5xl: 24px;
+  --font-size-lgi: 19px;
+  --font-size-11xl: 30px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-darkslateblue: #00264c;
+  --color-black: #000;
+
+  /* Gaps */
+  --gap-smi: 13px;
+
+  /* Paddings */
+  --padding-14xl: 33px;
+  --padding-xl: 20px;
+  --padding-mid: 17px;
+  --padding-7xs: 6px;
+}
