@@ -99,13 +99,14 @@
 }
 
 .frame .image-2 {
-  height: 45px;
-  top: 43px;
-  left: 534px;
   position: absolute;
-  width: 50px;
+  width: 70px;
+  height: 67px;
+  top: 38px;
+  left: 525px;
   object-fit: cover;
 }
+
 
 .frame .p {
   position: absolute;
