@@ -180,7 +180,7 @@ legendControl.addTo(map);
     var depth = feature.properties['Depth'];
 
     // Menentukan ukuran titik berdasarkan nilai Mag
-    var radius = (mag)+2;
+    var radius = (mag)**1.3;
 
     // Menentukan warna titik berdasarkan nilai Depth
     var fillColor;
