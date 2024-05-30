@@ -136,12 +136,13 @@ div.innerHTML += '<div class="legend-title" style="text-align: justify;">Keteran
 // Menambahkan legenda ke peta
 legendControl.addTo(map);
 
-//https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}
-//https://tiles.gempa.de/{z}/{x}/{y}.png
+//Terrain https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}
+//Hybrid https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}
+//Gempa de https://tiles.gempa.de/{z}/{x}/{y}.png
             
         map.createPane('pane_PetaDasar_0');
         map.getPane('pane_PetaDasar_0').style.zIndex = 400;
-        var layer_PetaDasar_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+        var layer_PetaDasar_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
             pane: 'pane_PetaDasar_0',
             opacity: 1.0,
             attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
