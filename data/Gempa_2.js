@@ -244,7 +244,27 @@ var json_Gempa_2 = {"type":"FeatureCollection","name":"Gempa_2","crs":{"type":"n
 { "type": "Feature", "properties": { "ID": "hgd261", "Waktu": "2010-04-07 05:15:01 WIB", "Link": "<a href=\"hgd261.html\">Info Lengkap</a>", "Mag": 7.8, "Depth": 31.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 97.05, 2.38] ] } },
 { "type": "Feature", "properties": { "ID": "hgd262", "Waktu": "1990-04-18 20:39:19 WIB", "Link": "<a href=\"hgd262.html\">Info Lengkap</a>", "Mag": 7.8, "Depth": 25.7 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 122.86, 1.19] ] } },
 { "type": "Feature", "properties": { "ID": "hgd263", "Waktu": "1991-06-20 12:18:52 WIB", "Link": "<a href=\"hgd263.html\">Info Lengkap</a>", "Mag": 7.5, "Depth": 31.4 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 122.79, 1.2] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd264", "Waktu": "2019-03-07 14:07:25 WIB", "Link": "<a href=\"hgd264.html\">Info Lengkap</a>", "Mag": 5.6, "Depth": 10.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 116.52, -8.42] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd265", "Waktu": "2012-08-18 16:41:52 WIB", "Link": "<a href=\"hgd265.html\">Info Lengkap</a>", "Mag": 6.3, "Depth": 10.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 120.096, -1.315] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd266", "Waktu": "2008-11-17 00:02:32 WIB", "Link": "<a href=\"hgd266.html\">Info Lengkap</a>", "Mag": 7.4, "Depth": 30.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 122.091, 1.271] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd267", "Waktu": "2009-01-04 05:43:50 WIB", "Link": "<a href=\"hgd267.html\">Info Lengkap</a>", "Mag": 7.7, "Depth": 17.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 132.885, -0.414] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd268", "Waktu": "2004-02-16 21:44:39 WIB", "Link": "<a href=\"hgd268.html\">Info Lengkap</a>", "Mag": 5.1, "Depth": 18.8 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 100.655, -0.466] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd269", "Waktu": "1999-12-21 21:14:57 WIB", "Link": "<a href=\"hgd269.html\">Info Lengkap</a>", "Mag": 6.5, "Depth": 56.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 105.555, -6.845] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd270", "Waktu": "1900-10-08 05:00:00 WIB", "Link": "<a href=\"hgd270.html\">Info Lengkap</a>", "Mag": 7.8, "Depth": 10.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 136, -3.5] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd271", "Waktu": "2023-02-09 13:27:58 WIB", "Link": "<a href=\"hgd271.html\">Info Lengkap</a>", "Mag": 5.1, "Depth": 9.9 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 140.559, -2.598] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd272", "Waktu": "2018-10-11 01:44:55 WIB", "Link": "<a href=\"hgd272.html\">Info Lengkap</a>", "Mag": 6.0, "Depth": 9.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 114.455, -7.453] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd273", "Waktu": "2017-12-15 23:47:58 WIB", "Link": "<a href=\"hgd273.html\">Info Lengkap</a>", "Mag": 6.5, "Depth": 90.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 108.17, -7.49] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd274", "Waktu": "2007-01-21 18:27:45 WIB", "Link": "<a href=\"hgd274.html\">Info Lengkap</a>", "Mag": 7.5, "Depth": 22.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 126.282, 1.065] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd275", "Waktu": "2003-03-25 09:53:25 WIB", "Link": "<a href=\"hgd275.html\">Info Lengkap</a>", "Mag": 6.5, "Depth": 33.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 120.743, -8.294] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd276", "Waktu": "2006-03-14 13:57:33 WIB", "Link": "<a href=\"hgd276.html\">Info Lengkap</a>", "Mag": 6.7, "Depth": 30.1 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 127.214, -3.595] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd277", "Waktu": "2021-10-16 03:18:20 WIB", "Link": "<a href=\"hgd277.html\">Info Lengkap</a>", "Mag": 5.1, "Depth": 10.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 115.458, -8.358] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd278", "Waktu": "2009-10-01 08:52:27 WIB", "Link": "<a href=\"hgd278.html\">Info Lengkap</a>", "Mag": 6.6, "Depth": 9.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 101.524, -2.482] ] } },
+{ "type": "Feature", "properties": { "ID": "hgd279", "Waktu": "2008-02-20 08:08:30 WIB", "Link": "<a href=\"hgd279.html\">Info Lengkap</a>", "Mag": 7.4, "Depth": 26.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 95.964, 2.768]] } },
+{ "type": "Feature", "properties": { "ID": "hgd280", "Waktu": "2007-11-25 23:02:15 WIB", "Link": "<a href=\"hgd280.html\">Info Lengkap</a>", "Mag": 6.5, "Depth": 20.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 118.37, -8.292]] } },
+{ "type": "Feature", "properties": { "ID": "hgd281", "Waktu": "2002-11-02 08:26:10 WIB", "Link": "<a href=\"hgd281.html\">Info Lengkap</a>", "Mag": 7.4, "Depth": 30.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ 96.085, 2.824]] } },
 
+
+	
 	
 ]
 }
