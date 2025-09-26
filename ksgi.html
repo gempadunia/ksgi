@@ -1,261 +1,455 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
-        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="css/leaflet-measure.css">
-<link rel="icon" href="img/Frame 27.png">
-         <style>
-        html, body, #map {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog ShakeMap Gempa Indonesia (KSGI)</title>
+    
+    <!-- Integrasi Leaflet JS & CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Integrasi Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Ikon untuk Tombol Toggle -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" xintegrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Custom styles untuk Leaflet dan layout */
+        :root {
+            --app-height: 100vh;
         }
-        html, body, #map {
-            width: 100%;
+        
+        html, body {
             height: 100%;
-            padding: 0;
             margin: 0;
+            font-family: 'Inter', sans-serif;
         }
 
+        #app-container {
+            height: var(--app-height, 100vh);
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+            z-index: 10;
+        }
+        /* Custom scrollbar */
+        .custom-scrollbar::-webkit-scrollbar { width: 8px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #555; }
+        
+        .list-item-active {
+            background-color: #dbeafe;
+            border-left-color: #2563eb;
+        }
+        
+        /* Style untuk legenda kedalaman yang lebih baik */
         .legend {
-            background-color: #fff;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 12px;
+            line-height: 1.5;
+            color: #333;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-size: 14px;
+        }
+        .legend h4 {
+            margin: 0 0 8px;
+            font-weight: bold;
+        }
+        .legend .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .legend .legend-item:last-child {
+            margin-bottom: 0;
+        }
+        .legend i {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            opacity: 0.9;
+            border: 1px solid #999;
+            flex-shrink: 0;
+        }
+        
+        /* Style untuk info "Tentang KSGI" */
+        .about-control {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .about-control a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        .about-control a i {
+            margin-right: 6px;
         }
 
-        .legend-box {
-            display: inline-block;
-            width: 3px;
-            height: 3px;
-            margin-right: 3px;
-            padding: 3px;
-            border: 1px solid #000;
+        /* Style untuk tombol toggle */
+        .toggle-btn {
+            position: absolute;
+            top: 80px;
+            left: 10px;
+            z-index: 1000;
+            background-color: white;
+            color: #333;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s;
         }
-
-        .legend-label {
-            display: inline-block;
-        }
-        .legend-title {
-        font-size: 14px;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-        </style>
-        <title>Katalog ShakeMap Gempa Indonesia</title>
-    </head>
-    <body>
-        <div id="map">
-        </div>
-        <script src="js/qgis2web_expressions.js"></script>
-        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
-        <script src="js/leaflet.rotatedMarker.js"></script>
-        <script src="js/leaflet.pattern.js"></script>
-        <script src="js/leaflet-hash.js"></script>
-        <script src="js/Autolinker.min.js"></script>
-        <script src="js/rbush.min.js"></script>
-        <script src="js/labelgun.min.js"></script>
-        <script src="js/labels.js"></script>
-        <script src="js/leaflet-measure.js"></script>
-        <script src="data/SesarAktifPuSGeN2017_1.js"></script>
-        <script src="data/Gempa_2.js"></script>
-        <script src="https://bmkg-content-inatews.storage.googleapis.com/gempaQL.json"></script>
-        <script>
-        var map = L.map('map', {
-            zoomControl:true, maxZoom:11, minZoom:1
-        })
-        var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://sociabuzz.com/gempadunia/tribe" target="_blank">Dukung gempa.dunia</a> &middot; <a href="https://desktop.google.co.uk/permissions/geoguidelines/attr-guide/" target="_blank">Map © Google</a>');
-        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
-        L.control.locate({locateOptions: {maxZoom: 11}}).addTo(map);
-        var measureControl = new L.Control.Measure({
-            position: 'topleft',
-            primaryLengthUnit: 'meters',
-            secondaryLengthUnit: 'kilometers',
-            primaryAreaUnit: 'sqmeters',
-            secondaryAreaUnit: 'hectares'
-        });
-        measureControl.addTo(map);
-        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
-        .innerHTML = '';
-        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
-        .className += ' fas fa-ruler';
-        var bounds_group = new L.featureGroup([]);
-        function setBounds() {
-            if (bounds_group.getLayers().length) {
-                map.fitBounds(bounds_group.getBounds());
+        @media (min-width: 768px) {
+            .toggle-btn {
+                display: none;
             }
         }
-
-var infoLayer = L.control({ position: 'bottomright' });
-
-// Menentukan konten informasi
-infoLayer.onAdd = function (map) {
-    var div = L.DomUtil.create('div', 'info legend');
-    div.innerHTML += '<div class="legend-title" style="text-align: justify;"><i class="fas fa-info-circle"></i><a href="index.html">Tentang KSGI</a></div>';
-    return div;
-};
-
-// Menambahkan informasi "Tentang KSGI" ke peta
-infoLayer.addTo(map);
-            
-
-// Membuat layer untuk legenda
-var legendControl = L.control({position: 'bottomleft'});
-
-// Menentukan konten legenda
-legendControl.onAdd = function (map) {
-    var div = L.DomUtil.create('div', 'info legend');
-div.innerHTML += '<div class="legend-title" style="text-align: justify;">Keterangan Kedalaman Gempa</div>';
-    // Menentukan label dan warna sesuai dengan persyaratan kedalaman gempa
-    var legendData = [
-        { depth: '0-50 km   ', color: 'rgba(255, 0, 0, 1.0)' },
-        { depth: '50-100 km   ', color: 'rgba(255, 255, 0, 1.0)' },
-        { depth: '100-300 km   ', color: 'rgba(0, 255, 0, 1.0)' },
-        { depth: '>300 km', color: 'rgba(0, 0, 255, 1.0)' }
-    ];
-
-    // Membuat HTML untuk legenda
-    for (var i = 0; i < legendData.length; i++) {
-        div.innerHTML +=
-            '<div class="legend-box" style="background:' + legendData[i].color + '"></div>' +
-            '<div class="legend-label">' + legendData[i].depth + '</div>';
-    }
-
-    return div;
-};
-
-// Menambahkan legenda ke peta
-legendControl.addTo(map);
-
-//Terrain https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}
-//Hybrid https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}
-//Gempa de https://tiles.gempa.de/{z}/{x}/{y}.png
-            
-        map.createPane('pane_PetaDasar_0');
-        map.getPane('pane_PetaDasar_0').style.zIndex = 400;
-        var layer_PetaDasar_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-            pane: 'pane_PetaDasar_0',
-            opacity: 1.0,
-            attribution: '<a href="https://desktop.google.co.uk/permissions/geoguidelines/attr-guide/">Google Terrain</a>',
-            minZoom: 1,
-            maxZoom: 11,
-            minNativeZoom: 0,
-            maxNativeZoom: 11
-        });
-        layer_PetaDasar_0;
-        map.addLayer(layer_PetaDasar_0);
-        
-
-
-        function pop_Gempa_2(feature, layer) {
-            var popupContent = '<table>\
-                   <tr>\
-                        <td colspan="2"><b>Magnitudo: </b>' + (feature.properties['Mag'] !== null ? autolinker.link(feature.properties['Mag'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><b>Kedalaman: </b>' + (feature.properties['Depth'] !== null ? autolinker.link(feature.properties['Depth'].toLocaleString()) : '') + " km" + '</td>\
-                    </tr>\
-                <tr>\
-                        <td colspan="2"><b>Waktu: </b>' + (feature.properties['Waktu'] !== null ? autolinker.link(feature.properties['Waktu'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><b>ID: </b>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Link'] !== null ? autolinker.link(feature.properties['Link'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+        #sidebar.hidden-mobile {
+            transform: translateX(-100%);
         }
- function style_Gempa_2_0(feature) {
-    // Mendapatkan nilai Mag dan Depth dari properti fitur
-    var mag = feature.properties['Mag'];
-    var depth = feature.properties['Depth'];
+    </style>
+</head>
+<body class="bg-gray-100">
 
-    // Menentukan ukuran titik berdasarkan nilai Mag
-    var radius = (mag)**1.3;
+    <div id="app-container" class="flex relative">
+        <!-- Sidebar -->
+        <div id="sidebar" class="w-full md:w-96 flex-shrink-0 h-full flex flex-col bg-white shadow-lg z-20 absolute md:relative transition-transform duration-300 ease-in-out md:flex">
+            <header class="p-4 border-b bg-blue-600 text-white">
+                <h1 class="text-xl font-bold">Katalog ShakeMap Gempa Indonesia</h1>
+                <p class="text-sm">@gempa.dunia</p>
+            </header>
 
-    // Menentukan warna titik berdasarkan nilai Depth
-    var fillColor;
-    if (depth >= 0 && depth < 50) {
-        fillColor = 'rgba(255, 0, 0, 1.0)'; // Merah
-    } else if (depth >= 50 && depth < 100) {
-        fillColor = 'rgba(255, 255, 0, 1.0)'; // Kuning
-    } else if (depth >= 100 && depth < 300) {
-        fillColor = 'rgba(0, 255, 0, 1.0)'; // Hijau
-    } else {
-        fillColor = 'rgba(0, 0, 255, 1.0)'; // Biru
-    }
+            <!-- Kontrol Urutan -->
+            <div class="p-3 border-b bg-gray-50">
+                <label for="sort-control" class="text-sm font-medium text-gray-700 block mb-2">Urutkan berdasarkan:</label>
+                <select id="sort-control" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <option value="time-desc">Waktu (Terbaru)</option>
+                    <option value="time-asc">Waktu (Terlama)</option>
+                    <option value="mag-desc">Magnitudo (Terbesar)</option>
+                    <option value="mag-asc">Magnitudo (Terkecil)</option>
+                </select>
+            </div>
 
-    // Mengembalikan objek gaya untuk digunakan oleh Leaflet
-    return {
-        pane: 'pane_Gempa_2',
-        radius: radius,
-        opacity: 0.6,
-        color: 'rgba(0,0,0,1.0)',
-        dashArray: '',
-        lineCap: 'butt',
-        lineJoin: 'miter',
-        weight: 2.0,
-        fill: true,
-        fillOpacity: 1,
-        fillColor: fillColor,
-        interactive: true,
-    };
-}
-        map.createPane('pane_Gempa_2');
-        map.getPane('pane_Gempa_2').style.zIndex = 402;
-        map.getPane('pane_Gempa_2').style['mix-blend-mode'] = 'normal';
-        var layer_Gempa_2 = new L.geoJson(json_Gempa_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_Gempa_2',
-            layerName: 'layer_Gempa_2',
-            pane: 'pane_Gempa_2',
-            onEachFeature: pop_Gempa_2,
-            pointToLayer: function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
+            <!-- List Gempa -->
+            <div id="earthquake-list-container" class="flex-grow overflow-y-auto custom-scrollbar">
+                <ul id="earthquake-list" class="divide-y divide-gray-200">
+                    <!-- Item list diisi oleh JavaScript -->
+                </ul>
+            </div>
+             <footer class="p-2 text-center text-xs text-gray-500 border-t">
+                Dibuat untuk visualisasi data gempa Indonesia.
+            </footer>
+        </div>
+
+        <!-- Konten Peta -->
+        <main id="main-content" class="flex-grow h-full">
+            <div id="map"></div>
+            <!-- Tombol Toggle diletakkan di dalam main agar posisinya relatif terhadap peta -->
+             <button id="toggle-view-btn" class="toggle-btn">
+                <i class="fas fa-list"></i>
+            </button>
+        </main>
+    </div>
+    
+    <!-- Memanggil data gempa dari file eksternal -->
+    <script src="data/Gempa_2.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile viewport height fix
+            const setAppHeight = () => {
+                document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+            };
+            window.addEventListener('resize', setAppHeight);
+            setAppHeight(); // Set initial height
+
+            const map = L.map('map').setView([-2.5, 118], 5);
+            let earthquakeData = [];
+            let markers = {};
+            let isSidebarVisible = true;
+
+
+            L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+                attribution: '&copy; <a href="https://about.google/brand-resource-center/products-and-services/geo-guidelines/">Google Maps</a>'
+            }).addTo(map);
+
+            const sortControl = document.getElementById('sort-control');
+            const listElement = document.getElementById('earthquake-list');
+            const sidebar = document.getElementById('sidebar');
+            const toggleBtn = document.getElementById('toggle-view-btn');
+            
+            // --- FUNGSI HELPER ---
+
+            function getDepthColor(depth) {
+                if (depth < 50) return '#dc3545';
+                if (depth <= 100) return '#ffc107';
+                if (depth <= 300) return '#28a745';
+                return '#0d6efd';
+            }
+            
+            function getRadius(magnitude) {
+                return Math.max(4, (magnitude - 3) * 4);
+            }
+
+            const mmiColors = { 1: '#ffffff', 2: '#c1daff', 3: '#8fdaff', 4: '#57f7ff', 5: '#95ffa3', 6: '#fceb05', 7: '#ffb301', 8: '#ff6f01', 9: '#ff0109', 10: '#ba0000' };
+            const mmiRoman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X+'];
+            
+            function getMmiDisplay(mmi) {
+                if (!mmi || mmi < 1) return '';
+                const level = Math.min(Math.floor(mmi), 10);
+                const roman = mmiRoman[level - 1];
+                const color = mmiColors[level];
+                return `<div class="p-1 rounded-md text-center font-bold text-black" style="background-color: ${color}; border: 1px solid #ccc;">${roman}</div>`;
+            }
+
+            function formatDateToWIB(isoString, originalTimeStr) {
+                 const date = new Date(isoString);
+                if (isNaN(date.getTime()) || date.getFullYear() < 1900) {
+                    return originalTimeStr;
+                }
+                const pad = (num) => num.toString().padStart(2, '0');
+                const year = date.getFullYear();
+                const month = pad(date.getMonth() + 1);
+                const day = pad(date.getDate());
+                const hours = pad(date.getHours());
+                const minutes = pad(date.getMinutes());
+                const seconds = pad(date.getSeconds());
+                return `${year}-${month}-${day} ${hours}:${minutes}:${seconds} WIB`;
+            }
+
+            function transformRawData(rawData) {
+                const parseTime = (timeStr) => {
+                    if (!timeStr) return new Date(0);
+                    let date = new Date(timeStr.replace(" WIB", "").replace(" ", "T"));
+                    if (!isNaN(date.getTime())) return date;
+                    let match = timeStr.match(/Tahun (\d+)/);
+                    if (match) return new Date(match[1], 0, 1);
+                    match = timeStr.match(/Abad ke-(\d+)/);
+                    if (match) {
+                        const year = (parseInt(match[1], 10) - 1) * 100 + 1;
+                        return new Date(year, 0, 1);
+                    }
+                    match = timeStr.match(/^(\d{4})-\d{4}$/);
+                    if (match) return new Date(match[1], 0, 1);
+                    date = new Date(timeStr);
+                    if (!isNaN(date.getTime())) return date;
+                    return new Date(0);
                 };
-                return L.circleMarker(latlng, style_Gempa_2_0(feature));
-            },
+
+                return rawData.features.map(feature => {
+                    const props = feature.properties;
+                    const geom = feature.geometry;
+                    if (!props || !geom || !geom.coordinates || !geom.coordinates[0]) return null;
+                    
+                    const linkTag = props.Link || '';
+                    const linkHrefMatch = linkTag.match(/href="([^"]+)"/);
+                    const linkHref = linkHrefMatch ? linkHrefMatch[1] : '#';
+
+                    return {
+                        type: "Feature",
+                        properties: {
+                            eventid: props.ID,
+                            time: parseTime(props.Waktu).toISOString(),
+                            originalTimeStr: props.Waktu,
+                            mag: props.Mag,
+                            depth: props.Depth,
+                            nama: props.nama || "Gempa",
+                            mmi: props.mmi || null,
+                            link: linkHref
+                        },
+                        geometry: { type: "Point", coordinates: geom.coordinates[0] }
+                    };
+                }).filter(Boolean);
+            }
+
+            // --- FUNGSI RENDER & UI ---
+
+            function renderList(data) {
+                listElement.innerHTML = '';
+                data.forEach(feature => {
+                    const props = feature.properties;
+                    const listItem = document.createElement('li');
+                    listItem.className = 'p-3 hover:bg-gray-100 cursor-pointer border-l-4 border-transparent transition-colors duration-200';
+                    listItem.dataset.eventId = props.eventid;
+                    
+                    const displayDate = formatDateToWIB(props.time, props.originalTimeStr);
+                    const mmiHtml = getMmiDisplay(props.mmi);
+                    
+                    listItem.innerHTML = `
+                        <div class="grid grid-cols-4 gap-2 items-center">
+                            <div class="col-span-3">
+                                <h3 class="font-bold text-lg text-blue-700 truncate" title="M${props.mag.toFixed(1)} - ${props.nama}">M${props.mag.toFixed(1)} - ${props.nama}</h3>
+                                <p class="text-sm text-gray-600 mt-1">${displayDate}</p>
+                            </div>
+                            <div class="col-span-1 text-right">
+                                ${mmiHtml}
+                                <p class="text-xs text-gray-500 mt-1">${props.depth} km</p>
+                            </div>
+                        </div>
+                        <a href="${props.link}" target="_blank" class="text-xs text-blue-500 hover:underline mt-2 inline-block">Info Lengkap</a>
+                    `;
+
+                    listItem.addEventListener('click', () => {
+                        const marker = markers[props.eventid];
+                        if (marker) {
+                            map.flyTo(marker.getLatLng(), 8);
+                            marker.openPopup();
+                        }
+                        document.querySelectorAll('#earthquake-list li').forEach(li => li.classList.remove('list-item-active'));
+                        listItem.classList.add('list-item-active');
+                         if (window.innerWidth < 768) {
+                             if(isSidebarVisible) toggleSidebar();
+                        }
+                    });
+
+                    listElement.appendChild(listItem);
+                });
+            }
+
+            function processData(data) {
+                Object.values(markers).forEach(marker => map.removeLayer(marker));
+                markers = {};
+                
+                const sortedData = [...data].sort((a, b) => new Date(b.properties.time) - new Date(a.properties.time));
+
+                sortedData.forEach(feature => {
+                    const { geometry, properties } = feature;
+                    const [lon, lat] = geometry.coordinates;
+                    
+                    const marker = L.circleMarker([lat, lon], {
+                        radius: getRadius(properties.mag),
+                        fillColor: getDepthColor(properties.depth),
+                        color: '#000',
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    }).addTo(map);
+                    
+                    const popupContent = `
+                        <b>Kekuatan:</b> M${properties.mag.toFixed(1)}<br>
+                        <b>Kedalaman:</b> ${properties.depth} km<br>
+                        <b>Waktu:</b> ${formatDateToWIB(properties.time, properties.originalTimeStr)}<br>
+                        <a href="${properties.link}" target="_blank">Lihat Info Lengkap</a>
+                    `;
+                    marker.bindPopup(popupContent);
+                    
+                    marker.on('click', () => {
+                         const listItem = document.querySelector(`li[data-event-id="${properties.eventid}"]`);
+                         if(listItem) {
+                             document.querySelectorAll('#earthquake-list li').forEach(li => li.classList.remove('list-item-active'));
+                             listItem.classList.add('list-item-active');
+                             listItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                         }
+                    });
+                    markers[properties.eventid] = marker;
+                });
+                renderList(sortedData);
+            }
+            
+            function sortAndRender() {
+                const sortBy = sortControl.value;
+                let sortedData = [...earthquakeData];
+                switch (sortBy) {
+                    case 'time-asc': sortedData.sort((a, b) => new Date(a.properties.time) - new Date(b.properties.time)); break;
+                    case 'mag-desc': sortedData.sort((a, b) => b.properties.mag - a.properties.mag); break;
+                    case 'mag-asc': sortedData.sort((a, b) => a.properties.mag - b.properties.mag); break;
+                    default: sortedData.sort((a, b) => new Date(b.properties.time) - new Date(a.properties.time)); break;
+                }
+                renderList(sortedData);
+            }
+            sortControl.addEventListener('change', sortAndRender);
+
+            const legend = L.control({position: 'bottomleft'});
+            legend.onAdd = function (map) {
+                const div = L.DomUtil.create('div', 'legend');
+                const depths = [0, 50, 100, 300];
+                const colors = ['#dc3545', '#ffc107', '#28a745', '#0d6efd'];
+                const labels = ['0-50 km', '50-100 km', '100-300 km', '>300 km'];
+
+                div.innerHTML = '<h4>Keterangan Kedalaman</h4>';
+                for (let i = 0; i < depths.length; i++) {
+                    div.innerHTML +=
+                        `<div class="legend-item">
+                            <i style="background:${colors[i]}"></i>
+                            <span>${labels[i]}</span>
+                        </div>`;
+                }
+                return div;
+            };
+            legend.addTo(map);
+
+            // Menambahkan Info "Tentang KSGI"
+            const aboutControl = L.control({position: 'topright'});
+            aboutControl.onAdd = function (map) {
+                const div = L.DomUtil.create('div', 'about-control');
+                div.innerHTML = `
+                    <a href="https://gempadunia.github.io/ksgi/" target="_blank" title="Kunjungi halaman utama KSGI">
+                        <i class="fas fa-info-circle"></i> Tentang KSGI
+                    </a>
+                `;
+                return div;
+            };
+            aboutControl.addTo(map);
+
+            // Logika untuk Toggle - Hanya untuk Mobile
+            function toggleSidebar() {
+                sidebar.classList.toggle('hidden-mobile');
+                isSidebarVisible = !isSidebarVisible;
+                const icon = toggleBtn.querySelector('i');
+                icon.className = isSidebarVisible ? 'fas fa-map' : 'fas fa-list';
+                setTimeout(() => { map.invalidateSize(); }, 300);
+            }
+            toggleBtn.addEventListener('click', toggleSidebar);
+
+            // Menangani perubahan ukuran window untuk beralih antara mode mobile dan desktop
+            function handleWindowResize() {
+                const isDesktop = window.innerWidth >= 768;
+                
+                if (isDesktop) {
+                    sidebar.classList.remove('hidden-mobile');
+                } else {
+                     isSidebarVisible = false;
+                     sidebar.classList.add('hidden-mobile');
+                     toggleBtn.querySelector('i').className = 'fas fa-list';
+                }
+                setTimeout(() => { map.invalidateSize(); }, 100);
+            }
+
+            window.addEventListener('resize', handleWindowResize);
+            
+            handleWindowResize();
+
+            // Memproses data lokal
+            if (typeof json_Gempa_2 !== 'undefined') {
+                earthquakeData = transformRawData(json_Gempa_2);
+                processData(earthquakeData);
+            } else {
+                console.error("Data gempa (json_Gempa_2) tidak ditemukan. Pastikan file Gempa_2.js sudah dimuat dengan benar.");
+                listElement.innerHTML = '<li class="p-4 text-center text-red-500">Gagal memuat data gempa.</li>';
+            }
         });
-        bounds_group.addLayer(layer_Gempa_2);
+    </script>
 
-
-
-
-
-
-
-
-
-
-
-        map.addLayer(layer_Gempa_2);
-        var baseMaps = {};
-        L.control.layers(baseMaps,{'Gempa': layer_Gempa_2,"Peta Dasar": layer_PetaDasar_0,},{collapsed:false}).addTo(map);
-        setBounds();
-        resetLabels([layer_Gempa_2]);
-        map.on("zoomend", function(){
-            resetLabels([layer_Gempa_2]);
-        });
-        map.on("layeradd", function(){
-            resetLabels([layer_Gempa_2]);
-        });
-        map.on("layerremove", function(){
-            resetLabels([layer_Gempa_2]);
-        });
-        </script>
-    </body>
+</body>
 </html>
+
